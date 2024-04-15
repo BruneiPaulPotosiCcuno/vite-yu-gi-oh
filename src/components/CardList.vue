@@ -13,20 +13,7 @@ export default {
         <div class="container">
             <div class="character-cards">
                 <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
-                <CharacterCard></CharacterCard>
+
                 
             </div>
         </div>
