@@ -1,6 +1,9 @@
 <script>
 export default {
-    name: 'CharacterCard.vue'
+    name: 'CharacterCard',
+    props: {
+        characterInfo: Object
+    }
 }
 </script>
 
@@ -8,15 +11,17 @@ export default {
     
     <div class="character-card">
         <div class="image">
-            <img src="https://images.ygoprodeck.com/images/cards_small/91231901.jpg" alt="">
+            <img :src="characterInfo.card_images[0].image_url">
         </div>
-        <h1>Nome</h1>
-        <div>Species</div>
+        <h1>{{ characterInfo.name }}</h1>
+        <div class="archetype">{{ characterInfo.archetype}}</div>
     </div>
 </template>
 
 <style scoped lang = "scss">
     .character-card {
+
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
         h1{
             color: white;
@@ -28,6 +33,13 @@ export default {
 
         img{
             width: 100%;
+        }
+
+        padding-bottom: 12px;
+
+        .archetype {
+        font-size: 20px;
+        font-weight: 300;    
         }
     }
 </style>
