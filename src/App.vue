@@ -3,7 +3,7 @@ import axios from 'axios';
 import { store } from './store.js';
 import AppHeader from './components/AppHeader.vue';
 import CardList from './components/CardList.vue';
-import AppSearch from './components/AppSearch.vue';
+import AppSearch from './components/AppSearch.vue'
 
 export default {
   components: {
@@ -13,11 +13,13 @@ export default {
   },
 data() {
   return {
-    store
+    store,
   };
  },
   
  methods: {
+
+  
   getCharacterFromApi() {
 
     const queryParams = {
@@ -25,8 +27,6 @@ data() {
       offset: 0,
     };
 
-    
-    
     if(store.selectedArchetypes !== '') {
       queryParams.archetype = store.selectedArchetypes; 
     }
@@ -39,6 +39,8 @@ data() {
       store.characters = response.data;
       
     });
+
+    
   }
   
  },

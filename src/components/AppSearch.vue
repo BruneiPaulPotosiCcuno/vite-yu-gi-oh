@@ -10,16 +10,16 @@ export default {
         return {
             store,
             archetypes: [],
-    };
+        };
     },
     methods: {
         getArchetypesFromApi() {
             axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
             .then((response) => {
-                console.log(response.data);
+                
                 this.archetypes = response.data;
             }); 
-        }
+        },
     }, 
     mounted() {
         this.getArchetypesFromApi();
@@ -34,9 +34,9 @@ export default {
     <div class="app-search">
         
         <div class="container">
-            <select v-model="store.selectedArchetypes" @change="$emit('searchPerformed')" >
+            <select v-model="store.selectedArchetypes" @change="$emit('searchPerformed')">
+                <option value="">Scegli</option>
                 
-                <option value=""></option>
                 <option v-for="archetype in archetypes" :value="archetype.archetype_name">{{ archetype.archetype_name }}</option>
             </select>
         </div>
