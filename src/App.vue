@@ -3,11 +3,13 @@ import axios from 'axios';
 import { store } from './store.js';
 import AppHeader from './components/AppHeader.vue';
 import CardList from './components/CardList.vue';
+import AppSearch from './components/AppSearch.vue'
 
 export default {
   components: {
     AppHeader,
     CardList,
+    AppSearch,
   },
 data() {
   return {
@@ -23,10 +25,21 @@ data() {
       
     } );
     
+  },
+  
+  getArchetypeFromApi() {
+    axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+    .then((response) =>{
+   
+      store.archetype = response.data;
+          
+    } );
   }
+
  },
  mounted() {
   this.getCharacterFromApi();
+  this.getArchetypeFromApi();
  }
 }
 </script>
@@ -34,6 +47,7 @@ data() {
 <template>
     <AppHeader></AppHeader>
     <main>
+        <AppSearch></AppSearch>
         <CardList></CardList>
     </main>
 </template>

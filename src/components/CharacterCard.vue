@@ -4,7 +4,7 @@ export default {
     props: {
         characterInfo: Object
     }
-}
+} 
 </script>
 
 <template>
