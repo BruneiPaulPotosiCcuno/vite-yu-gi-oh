@@ -21,7 +21,7 @@ data() {
 
   
   getCharacterFromApi() {
-
+    
     const queryParams = {
       num: 20,
       offset: 0,
@@ -53,9 +53,9 @@ data() {
 </script>
 
 <template>
-    <AppHeader @searchPerformed="getCharacterFromApi"></AppHeader>
+    <AppHeader></AppHeader>
     <main>
-        <AppSearch ></AppSearch>
+        <AppSearch @searchPerformed="getCharacterFromApi"></AppSearch>
         <CardList></CardList>
     </main>
 </template>
